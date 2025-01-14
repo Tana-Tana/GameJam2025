@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rg;
+    [SerializeField] private BoxCollider2D collider_2D;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float groundCheckDistance;
     private PlayerMovement playerMovement;
@@ -27,12 +28,21 @@ public class Player : MonoBehaviour
     {
         CheckOnGround();
         playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded);
-        Debug.DrawLine(transform.position, transform.position + Vector3.down * groundCheckDistance, Color.red);
     }
 
     private void CheckOnGround(){
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, layerMask);
-        isGrounded = hit.collider != null;
-        Debug.Log(isGrounded);
+        Vector3 leftPos = new Vector3(transform.position.x - collider_2D.size.x/2, transform.position.y, transform.position.z);
+        Vector3 rightPos = new Vector3(transform.position.x + collider_2D.size.x/2, transform.position.y, transform.position.z);
+
+
+        bool isGroundedLeft = Physics2D.Raycast(leftPos, Vector2.down, groundCheckDistance, layerMask);
+        bool isGroundedRight = Physics2D.Raycast(rightPos, Vector2.down, groundCheckDistance, layerMask);
+
+        isGrounded = isGroundedLeft || isGroundedRight;
+        // Debug.Log(isGrounded);
+        // Debug.DrawLine(transform.position, transform.position + Vector3.down * groundCheckDistance, Color.red);
+        Debug.DrawLine(leftPos, leftPos + Vector3.down * groundCheckDistance, Color.red);
+        Debug.DrawLine(rightPos, rightPos + Vector3.down * groundCheckDistance, Color.red);
+
     }
 }
