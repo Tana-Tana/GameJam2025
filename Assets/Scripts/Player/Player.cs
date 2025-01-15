@@ -45,4 +45,13 @@ public class Player : MonoBehaviour
         Debug.DrawLine(rightPos, rightPos + Vector3.down * groundCheckDistance, Color.red);
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ICollectible collectible = collision.GetComponent<ICollectible>();
+        if (collectible != null)
+        {
+            collectible.Collect();
+        }
+    }
 }
