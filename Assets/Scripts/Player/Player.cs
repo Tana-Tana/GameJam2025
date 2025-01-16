@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,26 +9,30 @@ public class Player : MonoBehaviour
     [SerializeField] private BoxCollider2D collider_2D;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float groundCheckDistance;
+    [SerializeField] private Camera cam;
     private PlayerMovement playerMovement;
     private PlayerInfo playerInfo;
 
     /******************************************************************************/
     private bool isGrounded;
+    private float padding;
     private void Awake(){
         playerMovement = new PlayerMovement();
         playerInfo = new PlayerInfo();
     }
 
-    void Start()
+    private void Start()
     {
         groundCheckDistance = 0.1f;
+        padding = 0.5f;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         CheckOnGround();
         playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded);
+
+        LimitPosition();
     }
 
     private void CheckOnGround(){
@@ -44,5 +49,17 @@ public class Player : MonoBehaviour
         Debug.DrawLine(leftPos, leftPos + Vector2.down * groundCheckDistance, Color.red);
         Debug.DrawLine(rightPos, rightPos + Vector2.down * groundCheckDistance, Color.red);
 
+    }
+
+    private void LimitPosition(){
+        Vector2 screenBounds;
+        screenBounds = cam.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cam.transform.position.z));
+        Vector3 camPos = cam.gameObject.transform.position;
+
+        // Giới hạn vị trí player
+        Vector3 position = transform.position;
+        position.x = Mathf.Clamp(position.x, camPos.x - (screenBounds.x - camPos.x) + padding, screenBounds.x - padding);
+        // position.y = Mathf.Clamp(position.y, screenBounds.y * -1 + padding, screenBounds.y - padding);
+        transform.position = position;
     }
 }
