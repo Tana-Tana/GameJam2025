@@ -62,4 +62,13 @@ public class Player : MonoBehaviour
         // position.y = Mathf.Clamp(position.y, screenBounds.y * -1 + padding, screenBounds.y - padding);
         transform.position = position;
     }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ICollectible collectible = collision.GetComponent<ICollectible>();
+        if (collectible != null)
+        {
+            collectible.Collect();
+        }
+    }
 }
