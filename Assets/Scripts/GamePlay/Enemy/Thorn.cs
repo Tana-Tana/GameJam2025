@@ -49,6 +49,7 @@ public class Thorn : MonoBehaviour, IEnemy
         else
         {
             Debug.Log("Va chạm với vật thể khác ngoài người chơi");
+            direction *= -1;
         }
     }
 }
