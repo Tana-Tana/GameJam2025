@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     /******************************************************************************/
     private bool isGrounded;
+    private bool hasKey;
     private void Awake(){
         playerMovement = new PlayerMovement();
         playerInfo = new PlayerInfo();
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         groundCheckDistance = 0.7f;
+        hasKey = false;
     }
 
     // Update is called once per frame
@@ -52,6 +54,11 @@ public class Player : MonoBehaviour
         if (collectible != null)
         {
             collectible.Collect();
+            hasKey = true;
+        }
+        if (collision.CompareTag("Gate") && hasKey)
+        {
+            Debug.Log("Winnnnnn");
         }
     }
 }
