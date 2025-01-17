@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Attribute", order = 0)]
-    [SerializeField] private Collider2D col;
+    [SerializeField] private CircleCollider2D col;
     [SerializeField] private Rigidbody2D rigit;
     public Rigidbody2D Rigit { get { return rigit; } set { rigit = value; } }
 
@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             Debug.Log("Đạn bắn trúng người chơi => endGame");
         }
 
-        Debug.Log("Xét điều kiện tan biến đạn tùy khoảng cách");
-        gameObject.SetActive(false);
+        Messenger.Broadcast(EventKey.RELOAD_BULLET);
+        //Debug.Log("Xét điều kiện tan biến đạn tùy khoảng cách");
     }
 }

@@ -2,14 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void Move(float speed, float speedUp, Rigidbody2D rg, bool isGrounded){
         
         float horizontal = Input.GetAxis("Horizontal"); // Nhận giá trị từ A/D hoặc phím mũi tên

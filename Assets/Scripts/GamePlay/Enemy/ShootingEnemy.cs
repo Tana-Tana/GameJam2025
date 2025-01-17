@@ -7,27 +7,28 @@ public class ShootingEnemy : MonoBehaviour, IEnemy
 {
     [Header("Element", order = 0)]
     [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private Rigidbody2D rigitbody2d;
 
 
     [Header("Movement", order = 1)]
-    [SerializeField] private float speed = 0;
-    [SerializeField] private int direction = 1;
+    [SerializeField] private Vector3 direction = Vector3.left;
 
     [Header("Bullet", order = 2)]
     [SerializeField] private Bullet bullet;
-    [SerializeField] private BulletPool bulletPool;
-    [SerializeField] private int amout_bullet = 1;
     [SerializeField] private float timeBetweenFire = 2f;
 
     // private
     private float _fireCountDown = 0;
+    private Bullet _bullet = null;
+
+    // public
+    public bool checkShootFollowPlayer = false;
+    public bool checkLeft = false;
+    public bool checkRight = false;
+    public bool checkShoot = false;
 
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-        rigitbody2d = GetComponent<Rigidbody2D>();
-        bulletPool = new BulletPool();
     }
 
     private void Start()
@@ -37,42 +38,70 @@ public class ShootingEnemy : MonoBehaviour, IEnemy
 
     private void GenerateBulletToBulletPool(Bullet bullet)
     {
-        for (int i = 1; i <= amout_bullet; i++)
-        {
-            Bullet obj = Instantiate(bullet, transform.position, Quaternion.identity);
-            obj.gameObject.SetActive(false);
-            bulletPool.AddBullet(obj);
-        }
+        _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
+    }
+
+    private void OnEnable()
+    {
+        Messenger.AddListener(EventKey.RELOAD_BULLET, ReloadBullet);
+    }
+
+    private void OnDisable()
+    {
+        Messenger.RemoveListener(EventKey.RELOAD_BULLET, ReloadBullet);
+    }
+
+    private void ReloadBullet()
+    {
+        _bullet.gameObject.SetActive(false);
+        _bullet.transform.position = transform.position;
     }
 
     private void Update()
     {
-        Shooting();
-        Move();
+        if (checkShootFollowPlayer)
+        {
+            Move();
+        }
+
+        if (checkLeft)
+        {
+            direction = Vector3.left;
+        }
+
+        if (checkRight)
+        {
+            direction = Vector3.right;
+        }
+
+        if(checkShoot)
+        {
+            Shooting();
+        }
+
+        _fireCountDown -= Time.deltaTime;
+        if (_fireCountDown < 0)
+        {
+            ReloadBullet();
+            checkShoot = true;
+            _fireCountDown = timeBetweenFire;
+        }
     }
 
     private void Shooting()
     {
-        _fireCountDown -= Time.deltaTime;
-        if (_fireCountDown < 0 )
-        {
-            _fireCountDown = timeBetweenFire;
-            Bullet obj = bulletPool.GetBullet();
-            obj.gameObject.SetActive(true);
-
-            Vector3 playerPos = FindObjectOfType<Player>().transform.position; // lấy vị trí nhân vật
-            obj.Direction = playerPos - transform.position; // lấy hướng bắn
-            obj.Rigit.AddForce(obj.Direction.normalized * obj.Speed, ForceMode2D.Impulse);
-        }
+        checkShoot = false;
+        _bullet.gameObject.SetActive(true);
+        _bullet.transform.position += direction * 1.2f;
+        _bullet.Rigit.AddForce(direction * _bullet.Speed, ForceMode2D.Impulse);
     }
 
     public void Move()
     {
-        Debug.Log("Xét điều kiện đổi hướng follow theo nhân vật");
         Vector3 playerPos = FindObjectOfType<Player>().transform.position; // lấy vị trí nhân vật
-        if(playerPos.x > transform.position.x)
+        if (playerPos.x < transform.position.x)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 270);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         else
         {
@@ -86,6 +115,6 @@ public class ShootingEnemy : MonoBehaviour, IEnemy
         {
             Debug.Log("Kẻ địch chạm vào người chơi => EndGame");
         }
-        
+
     }
 }

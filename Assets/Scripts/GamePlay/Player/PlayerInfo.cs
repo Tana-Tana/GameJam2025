@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo : MonoBehaviour
+public class PlayerInfo
 {
-    // Start is called before the first frame update
     private float speed = 6f;
     private float speedUp = 10f;
 

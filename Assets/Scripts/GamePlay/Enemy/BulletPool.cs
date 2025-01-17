@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPool : MonoBehaviour
+public class BulletPool
 {
     private List<Bullet> _bullets = new List<Bullet>();
 
