@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -121,70 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Mon2_shoot5_0
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 44
-        width: 485
-        height: 410
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0e9d7fd8b96ef44a9ff63b7bc7dd3c9
-      internalID: 157108778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mon2_shoot5_3
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 114
-        width: 70
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aedd189d552554e46b121a7f251c9c52
-      internalID: -760174709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mon2_shoot5_6
-      rect:
-        serializedVersion: 2
-        x: 592
-        y: 42
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 788546497eaa98343bdd01615d329055
-      internalID: -1644605594
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -195,17 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Mon2_shoot5_0: 157108778
-      Mon2_shoot5_1: 5411962
-      Mon2_shoot5_2: 1882614624
-      Mon2_shoot5_3: -760174709
-      Mon2_shoot5_4: -1573768040
-      Mon2_shoot5_5: -1861088906
-      Mon2_shoot5_6: -1644605594
-      Mon2_shoot5_7: 153286604
-      Mon2_shoot5_8: 1563183076
-      Mon2_shoot5_9: 1349692842
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
