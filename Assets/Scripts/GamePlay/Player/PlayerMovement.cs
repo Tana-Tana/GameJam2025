@@ -40,7 +40,7 @@ public class PlayerMovement
         }
         else{
             isMove = false;
-            Debug.Log("tu bi ko tinhf ieu");
+            // recode later
         }
        
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)

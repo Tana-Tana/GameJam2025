@@ -37,7 +37,7 @@ public class Thorn : MonoBehaviour, IEnemy
     public void Move()
     {
         transform.position += speed * direction * Time.deltaTime;
-        Debug.Log("Xét điều kiện đổi hướng nếu cần");
+        // Debug.Log("Xét điều kiện đổi hướng nếu cần");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

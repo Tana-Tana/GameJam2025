@@ -8,7 +8,6 @@ public class GamePlayController : Singleton<GamePlayController>
 
     private void Start()
     {
-        PanelManager.Instance.OpenPanel(GameConfig.GAME_PLAY_PANEL);
         numberOfKeys = 0;
     }
 

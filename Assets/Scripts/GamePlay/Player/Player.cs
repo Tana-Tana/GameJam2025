@@ -74,7 +74,6 @@ public class Player : MonoBehaviour
         FlipSprire();
         TransitonAnim();
 
-        Debug.Log(moveType);
     }
 
     private void CheckOnGround(){
