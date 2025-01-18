@@ -112,6 +112,7 @@ public class Player : MonoBehaviour
         ICollectible collectible = collision.GetComponent<ICollectible>();
         if (collectible != null)
         {
+            GamePlayController.Instance.countKey += 1;
             collectible.Collect();
             hasKey = true;
         }

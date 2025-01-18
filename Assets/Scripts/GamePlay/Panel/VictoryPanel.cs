@@ -28,6 +28,6 @@ public class VictoryPanel : Panel
         {
             Scene.sceneCurrent += 1;
         }
-        SceneManager.LoadScene(Scene.sceneCurrent + 1);
+        SceneManager.LoadScene(Scene.sceneCurrent);
     }
 }
