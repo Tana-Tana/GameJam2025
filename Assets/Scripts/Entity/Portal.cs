@@ -5,7 +5,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public Portal targetPortal;
-    private bool isTeleporting = false; // ?? tránh d?ch chuy?n liên t?c
+    private bool isTeleporting = false; // ?? trï¿½nh d?ch chuy?n liï¿½n t?c
 
     private void OnTriggerEnter2D(Collider2D other)
     {
