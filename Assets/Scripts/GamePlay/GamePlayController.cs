@@ -4,30 +4,27 @@ using UnityEngine;
 
 public class GamePlayController : Singleton<GamePlayController>
 {
-    public static int numberOfKeys = 0;
+    public static int joinGate = 0;
     public int countKey = 0;
 
     private void Start()
     {
-        numberOfKeys = 0;
+        joinGate = 0;
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) 
+	private void Update() {
+        if (Input.GetMouseButtonDown(0))
         {
             SoundManager.Instance.clickSound.Play();
         }
         CheckWinCondition();
-    }
-    public void CheckWinCondition()
+	}    
+	public void CheckWinCondition()
     {
-        if (numberOfKeys == 2)
+        if (joinGate == 2)
         {
-         	PanelManager.Instance.OpenPanel(GameConfig.VICTORY_PANEL);
-
-            Debug.Log("PopUp Win o day");
             SoundManager.Instance.winSound.Play();
         }
     }
+
 }

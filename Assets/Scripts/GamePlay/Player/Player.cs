@@ -118,6 +118,8 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("Gate") && hasKey)
         {
+            GamePlayController.joinGate += 1;
+            
             collision.GetComponent<Gate>().OpenTheGate();
             transform.DOScale(0f, 1f);
         }
