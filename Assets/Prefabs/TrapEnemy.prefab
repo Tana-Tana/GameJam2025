@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 62981208155024315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -0.14, z: 0}
+  m_LocalPosition: {x: -0.123, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.51721823, y: -0.048165083}
+  m_Offset: {x: -0.5121305, y: -0.048165083}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.03453648, y: 0.54587126}
+  m_Size: {x: 0.024361044, y: 0.54587126}
   m_EdgeRadius: 0
 --- !u!1 &2595349012478190351
 GameObject:
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 8609065270636023600}
   - component: {fileID: 6510145883401452663}
   - component: {fileID: 7711814849388465376}
+  - component: {fileID: 8674324501954143791}
   m_Layer: 0
   m_Name: TrapEnemy
   m_TagString: Untagged
@@ -155,7 +156,7 @@ SpriteRenderer:
   m_SortingLayerID: -233491007
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7387a5cc9a7cfe1489f7f4271d8f5d90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d3feb8c83f281440ab22b473c97020d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -225,9 +226,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10711175, y: -0.12929344}
+  m_Offset: {x: -0.058995724, y: -0.12585664}
   serializedVersion: 2
-  m_Radius: 0.5027149
+  m_Radius: 0.48553073
 --- !u!114 &7711814849388465376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,9 +245,30 @@ MonoBehaviour:
   rigitbody2d: {fileID: 8609065270636023600}
   leftCol: {fileID: 1265929404160838319}
   rightCol: {fileID: 2119820125069923626}
-  speed: 5
-  direction: {x: -1, y: 0, z: 0}
-  moveTime: 2
+  speed: 3
+  direction: {x: 1, y: 0, z: 0}
+  moveTime: 6
+--- !u!95 &8674324501954143791
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595349012478190351}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f34633c1579777d4dad65708e849fc61, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8809281644087033652
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +295,7 @@ Transform:
   m_GameObject: {fileID: 8809281644087033652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.92, y: -0.14, z: 0}
+  m_LocalPosition: {x: 1.002, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

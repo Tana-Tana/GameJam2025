@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -97,7 +98,8 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("Gate") && hasKey)
         {
-            Debug.Log("Winnnnnn");
+            collision.GetComponent<Gate>().OpenTheGate();
+            transform.DOScale(0f, 1f);
         }
     }
 

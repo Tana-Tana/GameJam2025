@@ -11,11 +11,11 @@ public class TrapEnemy : MonoBehaviour, IEnemy
 
     [Header("Movement", order = 1)]
     [SerializeField] private float speed = 3;
-    [SerializeField] private Vector3 direction = Vector3.left;
+    [SerializeField] private Vector3 direction = Vector3.right;
     [SerializeField] private float moveTime = 5;
 
     // private
-    private float moveCountdown = 0;
+    private float moveCountdown = 5;
 
     private void Awake()
     {
@@ -30,6 +30,9 @@ public class TrapEnemy : MonoBehaviour, IEnemy
         {
             moveCountdown = moveTime;
             direction *= -1;
+            Vector3 currentDirection = transform.eulerAngles;
+            currentDirection.y += 180;
+            transform.eulerAngles = currentDirection;
         }
         Move();
     }
@@ -39,6 +42,9 @@ public class TrapEnemy : MonoBehaviour, IEnemy
         if (leftCol != null && leftCol.IsTouchingLayers(LayerMask.GetMask("Ground")) || rightCol != null && rightCol.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             direction *= -1;
+            Vector3 currentDirection = transform.eulerAngles;
+            currentDirection.y += 180;
+            transform.eulerAngles = currentDirection;
             moveCountdown = moveTime;
         }
         transform.position += speed * direction * Time.deltaTime;
