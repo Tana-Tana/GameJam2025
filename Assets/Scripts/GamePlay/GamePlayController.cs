@@ -9,25 +9,22 @@ public class GamePlayController : Singleton<GamePlayController>
 
     private void Start()
     {
-        numberOfKeys = 0;
+        joinGate = 0;
     }
 
 	private void Update() {
-		CheckWinCondition();
+        if (Input.GetMouseButtonDown(0))
+        {
+            SoundManager.Instance.clickSound.Play();
+        }
+        CheckWinCondition();
 	}    
 	public void CheckWinCondition()
     {
-        if (numberOfKeys == 2)
+        if (joinGate == 2)
         {
-         	PanelManager.Instance.OpenPanel(GameConfig.VICTORY_PANEL);
             SoundManager.Instance.winSound.Play();
         }
     }
 
-    private void Update(){
-        if (Input.GetMouseButtonDown(0)) 
-        {
-            SoundManager.Instance.clickSound.Play();
-        }
-    }
 }
