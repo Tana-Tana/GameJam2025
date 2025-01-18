@@ -22,6 +22,6 @@ public class Gate : MonoBehaviour
     public void OpenTheGate()
     {
         spriteRenderer.sprite = openedGate;
-        GamePlayController.numberOfKeys += 1;
+        GamePlayController.Instance.numberOfKeys += 1;
     }
 }
