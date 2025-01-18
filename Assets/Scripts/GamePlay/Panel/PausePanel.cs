@@ -21,17 +21,15 @@ public class PausePanel : Panel
         popup.transform.DOScale(0, 0.5f).SetEase(Ease.OutQuint);
         overlayUI.transform.DOScale(0, 0.5f).SetEase(Ease.OutQuint);
         await Task.Delay(500);
-        Time.timeScale = 1f;
         PanelManager.Instance.ClosePanel(GameConfig.PAUSE_PANEL);
+        Messenger.Broadcast(EventKey.NOT_PAUSE);
     }
 
     public void Replay()
     {
-        Time.timeScale = 1f;
     }
     
     public void BackHome()
     {
-        Time.timeScale = 1f;
     }
 }

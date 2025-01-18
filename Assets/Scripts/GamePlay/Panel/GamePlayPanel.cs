@@ -19,7 +19,7 @@ public class GamePlayPanel : Panel
 
     public void OpenPauseGame()
     {
-        Time.timeScale = 0;
+        Messenger.Broadcast(EventKey.PAUSE);
         PanelManager.Instance.OpenPanel(GameConfig.PAUSE_PANEL);
     }
 }
