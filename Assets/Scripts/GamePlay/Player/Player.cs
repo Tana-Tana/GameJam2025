@@ -66,9 +66,11 @@ public class Player : MonoBehaviour
     private void Update()
     {
         CheckOnGround();
-        if(moveType.Equals(GameConfig.GROUND_TAG)) playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
-        else if(moveType.Equals(GameConfig.BUTTER_TAG)) playerMovement.MoveSlide(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
-
+        if (checkMove)
+        {
+            if (moveType.Equals(GameConfig.GROUND_TAG)) playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
+            else if (moveType.Equals(GameConfig.BUTTER_TAG)) playerMovement.MoveSlide(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
+        }
         LimitPosition();
 
         FlipSprire();
@@ -83,7 +85,7 @@ public class Player : MonoBehaviour
 
         bool isGroundedLeft = Physics2D.Raycast(leftPos, Vector2.down, groundCheckDistance, layerMask);
         bool isGroundedRight = Physics2D.Raycast(rightPos, Vector2.down, groundCheckDistance, layerMask);
-        Debug.Log(layerMask.value);
+        //Debug.Log(layerMask.value);
 
         isGrounded = isGroundedLeft || isGroundedRight;
         
@@ -136,6 +138,8 @@ public class Player : MonoBehaviour
 
     private void SetDead(){
         isDead = true;
+        checkMove = false;
+        PanelManager.Instance.OpenPanel(GameConfig.DEFEAT_PANEL);
     }
 
     private IEnumerator PlayRandomAnimWink()

@@ -5,8 +5,6 @@ public class TrapEnemy : MonoBehaviour, IEnemy
     [Header("Element", order = 0)]
     [SerializeField] private CircleCollider2D col;
     [SerializeField] private Rigidbody2D rigitbody2d;
-    [SerializeField] private BoxCollider2D leftCol;
-    [SerializeField] private BoxCollider2D rightCol;
 
 
     [Header("Movement", order = 1)]
@@ -39,14 +37,6 @@ public class TrapEnemy : MonoBehaviour, IEnemy
 
     public void Move()
     {
-        if (leftCol != null && leftCol.IsTouchingLayers(LayerMask.GetMask("Ground")) || rightCol != null && rightCol.IsTouchingLayers(LayerMask.GetMask("Ground")))
-        {
-            direction *= -1;
-            Vector3 currentDirection = transform.eulerAngles;
-            currentDirection.y += 180;
-            transform.eulerAngles = currentDirection;
-            moveCountdown = moveTime;
-        }
         transform.position += speed * direction * Time.deltaTime;
     }
 
@@ -55,7 +45,14 @@ public class TrapEnemy : MonoBehaviour, IEnemy
         if (collision.gameObject.CompareTag("Player"))
         {
             Messenger.Broadcast(EventKey.ENDGAME);
-            Debug.Log("Kẻ địch chạm vào người chơi => EndGame");
+        }
+        else if(collision.gameObject.CompareTag("Wall"))
+        {
+            moveCountdown = moveTime;
+            direction *= -1;
+            Vector3 currentDirection = transform.eulerAngles;
+            currentDirection.y += 180;
+            transform.eulerAngles = currentDirection;
         }
     }
 

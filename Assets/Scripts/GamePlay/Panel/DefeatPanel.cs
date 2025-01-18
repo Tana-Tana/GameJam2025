@@ -26,7 +26,7 @@ public class DefeatPanel : Panel
         SceneManager.LoadScene(Scene.sceneCurrent);
     }
 
-    public async Task BackHomeAsync()
+    public async void BackHomeAsync()
     {
         // popup
         popup.transform.DOScale(0, 0.5f).SetEase(Ease.OutQuint);

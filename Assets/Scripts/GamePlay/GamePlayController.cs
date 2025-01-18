@@ -15,7 +15,7 @@ public class GamePlayController : Singleton<GamePlayController>
     {
         if (numberOfKeys == 2)
         {
-            Debug.Log("PopUp Win o day");
+            PanelManager.Instance.OpenPanel(GameConfig.VICTORY_PANEL);
         }
     }
 }
