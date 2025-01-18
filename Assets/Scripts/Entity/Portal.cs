@@ -25,11 +25,11 @@ public class Portal : MonoBehaviour
         }
     }
 
-    private void Teleport(Collider2D player)
+    private void Teleport(Collider2D collision)
     {
         targetPortal.isTeleporting = true;
         isTeleporting = true;
-        player.transform.position = targetPortal.transform.position;
 
+        collision.transform.position = targetPortal.transform.position;
     }
 }
