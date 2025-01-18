@@ -105,6 +105,7 @@ public class ShootingEnemy : MonoBehaviour, IEnemy
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Messenger.Broadcast(EventKey.ENDGAME);
             Debug.Log("Kẻ địch chạm vào người chơi => EndGame");
         }
 
