@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class GamePlayController : Singleton<GamePlayController>
 {
-    public static int numberOfKeys = 0;
+    public static int joinGate = 0;
     public int countKey = 0;
 
     private void Start()
     {
-        numberOfKeys = 0;
-    }
-
-    private void Update()
-    {
-        CheckWinCondition();
-    }
-    public void CheckWinCondition()
-    {
-        if (numberOfKeys == 2)
-        {
-            PanelManager.Instance.OpenPanel(GameConfig.VICTORY_PANEL);
-        }
+        joinGate = 0;
+        countKey = 0;
     }
 }
