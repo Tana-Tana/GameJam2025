@@ -16,6 +16,14 @@ public class GamePlayController : Singleton<GamePlayController>
         if (numberOfKeys == 2)
         {
             Debug.Log("PopUp Win o day");
+            SoundManager.Instance.winSound.Play();
+        }
+    }
+
+    private void Update(){
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            SoundManager.Instance.clickSound.Play();
         }
     }
 }

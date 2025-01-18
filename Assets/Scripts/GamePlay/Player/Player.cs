@@ -136,6 +136,9 @@ public class Player : MonoBehaviour
 
     private void SetDead(){
         isDead = true;
+
+        SoundManager.Instance.dieSound.Play();
+        SoundManager.Instance.loseSound.Play();
     }
 
     private IEnumerator PlayRandomAnimWink()
