@@ -131,7 +131,7 @@ MonoBehaviour:
   collider_2D: {fileID: 5771659193913218113}
   layerMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 448
   groundCheckDistance: 0.7
   animator: {fileID: 6876036594946576407}
   spriteRenderer: {fileID: 6581438901180422584}
