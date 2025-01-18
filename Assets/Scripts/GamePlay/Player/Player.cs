@@ -7,9 +7,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rg;
-    [SerializeField] private BoxCollider2D collider_2D;
+    [SerializeField] private CapsuleCollider2D collider_2D;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float groundCheckDistance;
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Camera cam;
     private PlayerMovement playerMovement;
     private PlayerInfo playerInfo;
@@ -18,6 +20,14 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private float padding;
     private bool hasKey;
+
+    /******************************************************************************/
+    private bool isMove;
+    private bool isJump;
+    private bool isDead;
+    private bool isWink;
+    private bool isRight;
+
     private void Awake(){
         playerMovement = new PlayerMovement();
         playerInfo = new PlayerInfo();
@@ -28,14 +38,26 @@ public class Player : MonoBehaviour
         groundCheckDistance = 0.1f;
         padding = 0.5f;
         hasKey = false;
+        ////////////////////////////////////
+        isMove = false;
+        isJump = false;
+        isDead = false;
+        isRight = true;
+
+        StartCoroutine(PlayRandomAnimWink());
     }
 
     private void Update()
     {
         CheckOnGround();
-        playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded);
+        playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
 
         LimitPosition();
+
+        FlipSprire();
+        TransitonAnim();
+
+        Debug.Log(isMove + " " + isJump);
     }
 
     private void CheckOnGround(){
@@ -79,5 +101,37 @@ public class Player : MonoBehaviour
             collision.GetComponent<Gate>().OpenTheGate();
             transform.DOScale(0f, 1f);
         }
+    }
+
+    private void TransitonAnim(){
+        animator.SetBool("isMove", isMove);
+        animator.SetBool("isJump", isJump);
+        animator.SetBool("isWink", isWink);
+        animator.SetBool("isDead", isDead);
+    }
+
+    private IEnumerator PlayRandomAnimWink()
+    {
+        while (true)
+        {
+            // Tạo khoảng thời gian ngẫu nhiên
+            float waitTime = Random.Range(3f, 6f);
+
+            // Chờ đợi khoảng thời gian ngẫu nhiên
+            yield return new WaitForSeconds(waitTime);
+
+            // Kích hoạt animation
+            isWink = true;
+            yield return new WaitForSeconds(0.2f);
+            isWink = false;
+
+        }
+    }
+
+    private void FlipSprire(){
+        if(!isRight){
+            spriteRenderer.flipX = true;
+        }
+        else spriteRenderer.flipX = false;
     }
 }
