@@ -12,11 +12,12 @@ public class PlayerMovement
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
             rg.velocity = new Vector2(rg.velocity.x, speedUp);
+            isMove = false;
         }
 
         isJump = !isGrounded;
         if(horizontal != 0){
-            isMove = true;
+            if(!isJump) isMove = true;
             if(horizontal > 0) isRight = true;
             else isRight = false;
         }
