@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GamePlayController : Singleton<GamePlayController>
 {
-    public static int numberOfKeys;
+    public int numberOfKeys = 0;
 
     private void Start()
     {
+        PanelManager.Instance.OpenPanel(GameConfig.GAME_PLAY_PANEL);
         numberOfKeys = 0;
     }
 
