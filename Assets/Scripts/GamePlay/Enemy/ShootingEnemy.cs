@@ -6,8 +6,8 @@ using UnityEngine;
 public class ShootingEnemy : MonoBehaviour, IEnemy
 {
     [Header("Element", order = 0)]
-    [SerializeField] private BoxCollider2D boxCollider;
-
+    [SerializeField] private CircleCollider2D col;
+    [SerializeField] private AnimationClip animationClip;
 
     [Header("Movement", order = 1)]
     [SerializeField] private Vector3 direction = Vector3.left;
@@ -17,18 +17,18 @@ public class ShootingEnemy : MonoBehaviour, IEnemy
     [SerializeField] private float timeBetweenFire = 2f;
 
     // private
-    private float _fireCountDown = 0;
+    private float _fireCountDown = 2;
     private Bullet _bullet = null;
 
     // public
     public bool checkShootFollowPlayer = false;
-    public bool checkLeft = false;
-    public bool checkRight = false;
     public bool checkShoot = false;
 
     private void Awake()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
+        col = GetComponent<CircleCollider2D>();
+        timeBetweenFire = animationClip.length;
+        _fireCountDown = animationClip.length;
     }
 
     private void Start()
@@ -64,16 +64,6 @@ public class ShootingEnemy : MonoBehaviour, IEnemy
             Move();
         }
 
-        if (checkLeft)
-        {
-            direction = Vector3.left;
-        }
-
-        if (checkRight)
-        {
-            direction = Vector3.right;
-        }
-
         if(checkShoot)
         {
             Shooting();
@@ -92,20 +82,22 @@ public class ShootingEnemy : MonoBehaviour, IEnemy
     {
         checkShoot = false;
         _bullet.gameObject.SetActive(true);
-        _bullet.transform.position += direction * 1.2f;
+        _bullet.transform.position += (direction * 1.2f + Vector3.down * 0.25f );
         _bullet.Rigit.AddForce(direction * _bullet.Speed, ForceMode2D.Impulse);
     }
 
     public void Move()
     {
         Vector3 playerPos = FindObjectOfType<Player>().transform.position; // lấy vị trí nhân vật
-        if (playerPos.x < transform.position.x)
+        if (playerPos.x > transform.position.x)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+            direction = Vector3.right;
         }
         else
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            direction = Vector3.left;
         }
     }
 
