@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PausePanel : Panel
 {
@@ -27,9 +28,11 @@ public class PausePanel : Panel
 
     public void Replay()
     {
+        SceneManager.LoadScene(Scene.sceneCurrent);
     }
-    
+
     public void BackHome()
     {
+        SceneManager.LoadScene(Scene.HOME);
     }
 }
