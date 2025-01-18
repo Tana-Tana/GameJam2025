@@ -44,6 +44,7 @@ public class Thorn : MonoBehaviour, IEnemy
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Messenger.Broadcast(EventKey.ENDGAME);
             Debug.Log("Gai đâm trúng nhân vật => EndGame");
         }
         else

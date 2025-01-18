@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Messenger.Broadcast(EventKey.ENDGAME);
             Debug.Log("Đạn bắn trúng người chơi => endGame");
         }
 

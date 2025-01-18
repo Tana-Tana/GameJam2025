@@ -47,6 +47,13 @@ public class Player : MonoBehaviour
         StartCoroutine(PlayRandomAnimWink());
     }
 
+    private void OnEnable(){
+        Messenger.AddListener(EventKey.ENDGAME, SetDead);
+    }
+    private void OnDisable(){
+        Messenger.RemoveListener(EventKey.ENDGAME, SetDead);
+    }
+
     private void Update()
     {
         CheckOnGround();
@@ -62,8 +69,8 @@ public class Player : MonoBehaviour
 
     private void CheckOnGround(){
         Bounds boundsCollider = collider_2D.bounds;
-        Vector2 leftPos = new Vector2(boundsCollider.min.x, boundsCollider.min.y);
-        Vector2 rightPos = new Vector2(boundsCollider.max.x, boundsCollider.min.y);
+        Vector2 leftPos = new Vector2(boundsCollider.min.x + 0.2f, boundsCollider.min.y);
+        Vector2 rightPos = new Vector2(boundsCollider.max.x - 0.2f, boundsCollider.min.y);
 
         bool isGroundedLeft = Physics2D.Raycast(leftPos, Vector2.down, groundCheckDistance, layerMask);
         bool isGroundedRight = Physics2D.Raycast(rightPos, Vector2.down, groundCheckDistance, layerMask);
@@ -108,6 +115,10 @@ public class Player : MonoBehaviour
         animator.SetBool("isJump", isJump);
         animator.SetBool("isWink", isWink);
         animator.SetBool("isDead", isDead);
+    }
+
+    private void SetDead(){
+        isDead = true;
     }
 
     private IEnumerator PlayRandomAnimWink()
