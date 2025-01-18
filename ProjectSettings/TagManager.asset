@@ -8,6 +8,8 @@ TagManager:
   - Portal
   - Box
   - Gate
+  - Butter
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Butter
   - 
   - 
   - 

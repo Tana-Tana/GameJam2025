@@ -26,16 +26,17 @@ public class PlayerMovement
 
     public void MoveSlide(float speed, float speedUp, Rigidbody2D rg, bool isGrounded, ref bool isMove, ref bool isJump, ref bool isRight){
 
+            rg.velocity = rg.velocity;
 
         if(Input.GetKeyDown(KeyCode.A)){
             rg.velocity = new Vector2(-speed,0);
             if(!isJump) isMove = true;
-            isRight = true;
+            isRight = false;
         }
         else if(Input.GetKeyDown(KeyCode.D)){
             rg.velocity = new Vector2(speed,0);
             if(!isJump) isMove = true;
-            isRight = false;
+            isRight = true;
         }
         else{
             isMove = false;

@@ -15,6 +15,9 @@ public static class GameConfig
     public const int SOUND_ON_START = 1;
     public const int MUSIC_ON_START = 1;
 
-    // 
+    // entity tag
+    public const string GROUND_TAG = "Ground";
+    public const string BUTTER_TAG = "Butter";
+
 
 }

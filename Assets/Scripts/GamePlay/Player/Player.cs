@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     private bool isDead;
     private bool isWink;
     private bool isRight;
+    /******************************************************************************/
+    private string moveType;
 
     private void Awake(){
         playerMovement = new PlayerMovement();
@@ -43,6 +45,8 @@ public class Player : MonoBehaviour
         isJump = false;
         isDead = false;
         isRight = true;
+        ////////////////////////////////////
+        moveType = GameConfig.GROUND_TAG;
 
         StartCoroutine(PlayRandomAnimWink());
     }
@@ -57,14 +61,15 @@ public class Player : MonoBehaviour
     private void Update()
     {
         CheckOnGround();
-        playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
+        if(moveType.Equals(GameConfig.GROUND_TAG)) playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
+        else if(moveType.Equals(GameConfig.BUTTER_TAG)) playerMovement.MoveSlide(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
 
         LimitPosition();
 
         FlipSprire();
         TransitonAnim();
 
-        Debug.Log(isMove + " " + isJump);
+        Debug.Log(moveType);
     }
 
     private void CheckOnGround(){
@@ -108,6 +113,13 @@ public class Player : MonoBehaviour
             collision.GetComponent<Gate>().OpenTheGate();
             transform.DOScale(0f, 1f);
         }
+
+        ////////////////////////////////
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.CompareTag(GameConfig.BUTTER_TAG)){moveType = GameConfig.BUTTER_TAG;}
+        if(collision.gameObject.CompareTag(GameConfig.GROUND_TAG)){moveType = GameConfig.GROUND_TAG;}
     }
 
     private void TransitonAnim(){
