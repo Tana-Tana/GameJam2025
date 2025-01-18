@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GamePlayController : Singleton<GamePlayController>
 {
-    public int numberOfKeys = 0;
+    public static int numberOfKeys = 0;
 
     private void Start()
     {
