@@ -245,9 +245,9 @@ MonoBehaviour:
   rigitbody2d: {fileID: 8609065270636023600}
   leftCol: {fileID: 1265929404160838319}
   rightCol: {fileID: 2119820125069923626}
-  speed: 1
-  direction: {x: -1, y: 0, z: 0}
-  moveTime: 3
+  speed: 3
+  direction: {x: 1, y: 0, z: 0}
+  moveTime: 6
 --- !u!95 &8674324501954143791
 Animator:
   serializedVersion: 5
