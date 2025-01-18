@@ -23,6 +23,8 @@ public class Key : MonoBehaviour, ICollectible
         yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
         OnKeyCollected?.Invoke();
+
+        SoundManager.Instance.takeKeySound.Play();
     }
 
 }

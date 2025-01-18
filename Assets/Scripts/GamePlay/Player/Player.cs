@@ -141,8 +141,13 @@ public class Player : MonoBehaviour
 
     private void SetDead(){
         isDead = true;
+        
         checkMove = false;
         PanelManager.Instance.OpenPanel(GameConfig.DEFEAT_PANEL);
+
+
+        SoundManager.Instance.dieSound.Play();
+        SoundManager.Instance.loseSound.Play();
     }
 
     private IEnumerator PlayRandomAnimWink()
