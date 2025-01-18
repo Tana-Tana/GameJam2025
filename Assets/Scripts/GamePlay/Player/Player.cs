@@ -57,7 +57,6 @@ public class Player : MonoBehaviour
         FlipSprire();
         TransitonAnim();
 
-        Debug.Log(isMove + " " + isJump);
     }
 
     private void CheckOnGround(){

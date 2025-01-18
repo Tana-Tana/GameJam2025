@@ -5,7 +5,7 @@ using UnityEngine;
 public class Thorn : MonoBehaviour, IEnemy
 {
     [Header("Element", order = 0)]
-    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private EdgeCollider2D boxCollider;
     [SerializeField] private Rigidbody2D rigitbody2d;
 
 
@@ -19,7 +19,7 @@ public class Thorn : MonoBehaviour, IEnemy
 
     private void Awake()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<EdgeCollider2D>();
         rigitbody2d = GetComponent<Rigidbody2D>();
     }
 
@@ -37,7 +37,6 @@ public class Thorn : MonoBehaviour, IEnemy
     public void Move()
     {
         transform.position += speed * direction * Time.deltaTime;
-        Debug.Log("Xét điều kiện đổi hướng nếu cần");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
