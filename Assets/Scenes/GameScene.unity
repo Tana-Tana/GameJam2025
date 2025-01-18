@@ -423,6 +423,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheckDistance: 0.7
+  cam: {fileID: 0}
 --- !u!212 &597975053
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -710,6 +711,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheckDistance: 0.7
+  cam: {fileID: 0}
 --- !u!50 &1261094843
 Rigidbody2D:
   serializedVersion: 4
