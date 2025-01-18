@@ -5,11 +5,11 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public Portal targetPortal;
-    private bool isTeleporting = false; // ?? tránh d?ch chuy?n liên t?c
+    private bool isTeleporting = false; 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.CompareTag("Player") || (other.CompareTag("Box"))) && !isTeleporting)
+        if (other.CompareTag("Box") && !isTeleporting)
         {
             Debug.Log("Da cham cong");
             Teleport(other);
@@ -18,7 +18,7 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if ((collision.CompareTag("Player") || collision.CompareTag("Box")) && isTeleporting)
+        if (collision.CompareTag("Box") && isTeleporting)
         {
             Debug.Log("Da thoat cong");
             isTeleporting = false;
