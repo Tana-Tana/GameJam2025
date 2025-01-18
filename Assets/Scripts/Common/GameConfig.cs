@@ -10,6 +10,8 @@ public static class GameConfig
     public const string HOME_PANEL = "HomePanel";
     public const string PAUSE_PANEL = "PausePanel";
     public const string GAME_PLAY_PANEL = "GamePlayPanel";
+    public const string VICTORY_PANEL = "VictoryPanel";
+    public const string DEFEAT_PANEL = "DefeatPanel";
 
     // gamePref
     public const int SOUND_ON_START = 1;

@@ -16,9 +16,7 @@ public class GamePlayController : Singleton<GamePlayController>
     {
         if (numberOfKeys == 2)
         {
-            Debug.Log("Bat anim chet");
             Debug.Log("PopUp Win o day");
-            Debug.Log("Lam observer");
         }
     }
 }

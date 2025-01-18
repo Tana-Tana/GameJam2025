@@ -54,9 +54,13 @@ public class Player : MonoBehaviour
 
     private void OnEnable(){
         Messenger.AddListener(EventKey.ENDGAME, SetDead);
+        Messenger.AddListener(EventKey.PAUSE, SetNoneSpeed);
+        Messenger.AddListener(EventKey.NOT_PAUSE, SetSpeed);
     }
     private void OnDisable(){
         Messenger.RemoveListener(EventKey.ENDGAME, SetDead);
+        Messenger.RemoveListener(EventKey.PAUSE, SetNoneSpeed);
+        Messenger.RemoveListener(EventKey.NOT_PAUSE, SetSpeed);
     }
 
     private void Update()
@@ -157,18 +161,6 @@ public class Player : MonoBehaviour
             spriteRenderer.flipX = true;
         }
         else spriteRenderer.flipX = false;
-    }
-
-    private void OnEnable()
-    {
-        Messenger.AddListener(EventKey.PAUSE, SetNoneSpeed);
-        Messenger.AddListener(EventKey.NOT_PAUSE, SetSpeed);
-    }
-
-    private void OnDisable()
-    {
-        Messenger.RemoveListener(EventKey.PAUSE, SetNoneSpeed);
-        Messenger.RemoveListener(EventKey.NOT_PAUSE, SetSpeed);
     }
 
     private void SetSpeed()
