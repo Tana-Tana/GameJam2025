@@ -20,13 +20,14 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private float padding;
     private bool hasKey;
-
     /******************************************************************************/
     private bool isMove;
     private bool isJump;
     private bool isDead;
     private bool isWink;
     private bool isRight;
+
+    private bool checkMove = true;
 
     private void Awake(){
         playerMovement = new PlayerMovement();
@@ -57,8 +58,10 @@ public class Player : MonoBehaviour
     private void Update()
     {
         CheckOnGround();
-        playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
-
+        if (checkMove)
+        {
+            playerMovement.Move(playerInfo.GetSpeed(), playerInfo.GetSpeedUp(), rg, isGrounded, ref isMove, ref isJump, ref isRight);
+        }
         LimitPosition();
 
         FlipSprire();
@@ -144,5 +147,27 @@ public class Player : MonoBehaviour
             spriteRenderer.flipX = true;
         }
         else spriteRenderer.flipX = false;
+    }
+
+    private void OnEnable()
+    {
+        Messenger.AddListener(EventKey.PAUSE, SetNoneSpeed);
+        Messenger.AddListener(EventKey.NOT_PAUSE, SetSpeed);
+    }
+
+    private void OnDisable()
+    {
+        Messenger.RemoveListener(EventKey.PAUSE, SetNoneSpeed);
+        Messenger.RemoveListener(EventKey.NOT_PAUSE, SetSpeed);
+    }
+
+    private void SetSpeed()
+    {
+        checkMove = true;
+    }
+
+    private void SetNoneSpeed()
+    {
+        checkMove = false;
     }
 }
