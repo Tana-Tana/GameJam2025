@@ -131,7 +131,7 @@ MonoBehaviour:
   collider_2D: {fileID: 273311305008201074}
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   groundCheckDistance: 0.7
   animator: {fileID: 1360721564600049453}
   spriteRenderer: {fileID: 6004028332222562431}
@@ -166,7 +166,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7032438361317635622}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96c1828d8de9a634493903776138be62, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

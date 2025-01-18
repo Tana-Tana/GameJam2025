@@ -961,11 +961,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9e566ab37ade684f93b3779ecf5425d, type: 3}
---- !u!70 &586312149 stripped
-CapsuleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5771659193913218113, guid: 5dc7a1b152dd8c5489f949de27e43e86, type: 3}
-  m_PrefabInstance: {fileID: 1059661415}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &586312154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3625104973921791063, guid: 5dc7a1b152dd8c5489f949de27e43e86, type: 3}
@@ -2685,18 +2680,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1856107593}
-    - target: {fileID: 3713889060500368316, guid: 5dc7a1b152dd8c5489f949de27e43e86, type: 3}
-      propertyPath: collider_2D
-      value: 
-      objectReference: {fileID: 586312149}
-    - target: {fileID: 3713889060500368316, guid: 5dc7a1b152dd8c5489f949de27e43e86, type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 192
-      objectReference: {fileID: 0}
-    - target: {fileID: 5771659193913218113, guid: 5dc7a1b152dd8c5489f949de27e43e86, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 96c1828d8de9a634493903776138be62, type: 2}
     - target: {fileID: 7276534666926602106, guid: 5dc7a1b152dd8c5489f949de27e43e86, type: 3}
       propertyPath: m_Name
       value: Player2
@@ -4104,18 +4087,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 273311305008201074, guid: 02696472c4fabb140bba2b9f10a0c099, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 96c1828d8de9a634493903776138be62, type: 2}
     - target: {fileID: 4805127161456926627, guid: 02696472c4fabb140bba2b9f10a0c099, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1856107593}
-    - target: {fileID: 4805127161456926627, guid: 02696472c4fabb140bba2b9f10a0c099, type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 192
-      objectReference: {fileID: 0}
     - target: {fileID: 6744059299099682742, guid: 02696472c4fabb140bba2b9f10a0c099, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.26222

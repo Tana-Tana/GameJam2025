@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rg: {fileID: 4787040875669950174}
-  collider_2D: {fileID: 0}
+  collider_2D: {fileID: 5771659193913218113}
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   groundCheckDistance: 0.7
   animator: {fileID: 6876036594946576407}
   spriteRenderer: {fileID: 6581438901180422584}
@@ -166,7 +166,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7276534666926602106}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96c1828d8de9a634493903776138be62, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
