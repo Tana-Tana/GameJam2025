@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 597975052}
   - component: {fileID: 597975056}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,7 +522,7 @@ Transform:
   m_GameObject: {fileID: 597975051}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.52, y: -2.73, z: 0}
+  m_LocalPosition: {x: -0.31, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 1261094842}
   - component: {fileID: 1261094841}
   m_Layer: 0
-  m_Name: Player (1)
+  m_Name: Player2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,7 +837,7 @@ Transform:
   m_GameObject: {fileID: 1261094840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.52, y: 2.33, z: 0}
+  m_LocalPosition: {x: -0.67, y: 1.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -984,6 +984,7 @@ GameObject:
   - component: {fileID: 1383790673}
   - component: {fileID: 1383790672}
   - component: {fileID: 1383790671}
+  - component: {fileID: 1383790674}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1059,12 +1060,26 @@ Transform:
   m_GameObject: {fileID: 1383790670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 7.7, y: -0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1383790674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383790670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8735f5aef483f084493c30d3a9dcf604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Trans: {fileID: 597975054}
+  player2Trans: {fileID: 1261094845}
 --- !u!1 &1639955187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,8 +1159,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0, y: 0.034747243}
+  m_Size: {x: 0.9659392, y: 1.9318783}
   m_Direction: 0
 --- !u!212 &1639955191
 SpriteRenderer:
@@ -1264,7 +1279,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.85, y: -2.51, z: 0}
-  m_LocalScale: {x: 17.747051, y: 1, z: 1}
+  m_LocalScale: {x: 47.9395, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 835840710}
@@ -1743,8 +1758,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0, y: 0.0042300224}
+  m_Size: {x: 0.9692177, y: 1.9384356}
   m_Direction: 0
 --- !u!212 &1993472834
 SpriteRenderer:
@@ -1826,7 +1841,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.85, y: -2.51, z: 0}
-  m_LocalScale: {x: 17.747051, y: 1, z: 1}
+  m_LocalScale: {x: 46.7901, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1959714953}
@@ -1840,7 +1855,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2036579378}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96c1828d8de9a634493903776138be62, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1956,7 +1971,7 @@ Transform:
   m_GameObject: {fileID: 2118089193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.47, y: 4.94, z: 0}
+  m_LocalPosition: {x: -9.63, y: 4.88, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2076,7 +2091,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.36477977, g: 0.2076262, b: 0.2076262, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
