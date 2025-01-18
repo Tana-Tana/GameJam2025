@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             Debug.Log("Đạn bắn trúng người chơi => endGame");
         }
 
-        Debug.Log("Xét điều kiện tan biến đạn tùy khoảng cách");
-        gameObject.SetActive(false);
+        Messenger.Broadcast(EventKey.RELOAD_BULLET);
+        //Debug.Log("Xét điều kiện tan biến đạn tùy khoảng cách");
     }
 }

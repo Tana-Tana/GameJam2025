@@ -9,7 +9,7 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !isTeleporting)
+        if ((other.CompareTag("Player") || (other.CompareTag("Box"))) && !isTeleporting)
         {
             Debug.Log("Da cham cong");
             Teleport(other);
@@ -18,7 +18,7 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && isTeleporting)
+        if ((collision.CompareTag("Player") || collision.CompareTag("Box")) && isTeleporting)
         {
             Debug.Log("Da thoat cong");
             isTeleporting = false;
