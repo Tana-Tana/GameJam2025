@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
 
         bool isGroundedLeft = Physics2D.Raycast(leftPos, Vector2.down, groundCheckDistance, layerMask);
         bool isGroundedRight = Physics2D.Raycast(rightPos, Vector2.down, groundCheckDistance, layerMask);
+        Debug.Log(layerMask.value);
 
         isGrounded = isGroundedLeft || isGroundedRight;
         
