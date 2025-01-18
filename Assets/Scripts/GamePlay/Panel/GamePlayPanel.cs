@@ -9,12 +9,12 @@ public class GamePlayPanel : Panel
 
     private void Start()
     {
-        keyCount.text = GamePlayController.Instance.numberOfKeys.ToString();    
+        keyCount.text = GamePlayController.numberOfKeys.ToString();    
     }
 
     private void Update()
     {
-        keyCount.text = GamePlayController.Instance.numberOfKeys.ToString();
+        keyCount.text = GamePlayController.numberOfKeys.ToString();
     }
 
     public void OpenPauseGame()

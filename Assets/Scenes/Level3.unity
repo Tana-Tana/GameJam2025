@@ -2508,13 +2508,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortalB
       objectReference: {fileID: 0}
+    - target: {fileID: 5671713802941368842, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.60209656
+      objectReference: {fileID: 0}
+    - target: {fileID: 5671713802941368842, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2600985
+      objectReference: {fileID: 0}
+    - target: {fileID: 5671713802941368842, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.021068573
+      objectReference: {fileID: 0}
+    - target: {fileID: 5671713802941368842, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.13004923
+      objectReference: {fileID: 0}
+    - target: {fileID: 5671713802941368842, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 5671713802941368842, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6156537318351069081, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.23
       objectReference: {fileID: 0}
     - target: {fileID: 6156537318351069081, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.2491717
+      value: -4.94
       objectReference: {fileID: 0}
     - target: {fileID: 6156537318351069081, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2548,6 +2572,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8063362293272575414, guid: 9a6840ba1f47ad8459fb9d8efb4fc6fb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d87d779d707cb64d9edcc3318b34842, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2622,13 +2650,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 408091590924084047, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6416513
+      objectReference: {fileID: 0}
+    - target: {fileID: 408091590924084047, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
+      propertyPath: m_Size.y
+      value: 2.279131
+      objectReference: {fileID: 0}
+    - target: {fileID: 408091590924084047, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.01805681
+      objectReference: {fileID: 0}
+    - target: {fileID: 408091590924084047, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1395657
+      objectReference: {fileID: 0}
+    - target: {fileID: 408091590924084047, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 408091590924084047, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5494557374147089783, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.14
       objectReference: {fileID: 0}
     - target: {fileID: 5494557374147089783, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7492483
+      value: 2.03
       objectReference: {fileID: 0}
     - target: {fileID: 5494557374147089783, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2666,6 +2718,10 @@ PrefabInstance:
       propertyPath: targetPortal
       value: 
       objectReference: {fileID: 1080751405}
+    - target: {fileID: 6443427016652509313, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d87d779d707cb64d9edcc3318b34842, type: 3}
     - target: {fileID: 9170559205139288685, guid: 7e026d0b81ebf7f428c99c594b8131b5, type: 3}
       propertyPath: m_Name
       value: PortalA
