@@ -10,6 +10,10 @@ public class PlayerInfo
     public float GetSpeed(){
         return speed;   
     }
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
     public float GetSpeedUp(){
         return speedUp;
     }
