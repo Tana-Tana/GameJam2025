@@ -14,6 +14,10 @@ public class GamePlayController : Singleton<GamePlayController>
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            SoundManager.Instance.clickSound.Play();
+        }
         CheckWinCondition();
     }
     public void CheckWinCondition()
@@ -24,13 +28,6 @@ public class GamePlayController : Singleton<GamePlayController>
 
             Debug.Log("PopUp Win o day");
             SoundManager.Instance.winSound.Play();
-        }
-    }
-
-    private void Update(){
-        if (Input.GetMouseButtonDown(0)) 
-        {
-            SoundManager.Instance.clickSound.Play();
         }
     }
 }
