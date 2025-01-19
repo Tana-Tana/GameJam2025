@@ -23,7 +23,7 @@ public class PanelManager : Singleton<PanelManager>
             return panels[name];
         }
         //Load panel len tu resources
-        Panel panel = Resources.Load<Panel>("Panel/" + name);
+        Panel panel = Resources.Load<Panel>("Panels/" + name);
         //Sinh ra mot ban sao
         Panel newPanel = Instantiate(panel, transform);
         newPanel.name = name;
