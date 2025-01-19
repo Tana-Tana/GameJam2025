@@ -17,20 +17,20 @@ public class HomePanel : Panel
 
     public void OpenLevel1()
     {
-        Scene.sceneCurrent = 1;
+        Scene.sceneCurrent = 2;
         SceneManager.LoadScene(Scene.Level1);
     }
 
     public void OpenLevel2()
     {
-        Scene.sceneCurrent = 2;
+        Scene.sceneCurrent = 3;
         SceneManager.LoadScene(Scene.Level2);
 
     }
 
     public void OpenLevel3()
     {
-        Scene.sceneCurrent = 3;
+        Scene.sceneCurrent = 4;
         SceneManager.LoadScene(Scene.Level3);
 
     }

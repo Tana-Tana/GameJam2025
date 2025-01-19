@@ -23,7 +23,7 @@ public class VictoryPanel : Panel
         overlayUI.transform.DOScale(0, 0.5f).SetEase(Ease.OutQuint);
         await Task.Delay(500);
         PanelManager.Instance.ClosePanel(GameConfig.PAUSE_PANEL);
-        if (Scene.sceneCurrent + 1 > 3) Scene.sceneCurrent = -1;
+        if (Scene.sceneCurrent + 1 > 4) Scene.sceneCurrent = 1;
         else
         {
             Scene.sceneCurrent += 1;
