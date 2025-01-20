@@ -7,7 +7,7 @@ public class HomePanel : Panel
 {
     private void Start()
     {
-        Scene.sceneCurrent = 0;
+        Scene.sceneCurrent = 1;
     }
 
     public void OpenSetting()
