@@ -22,9 +22,9 @@ public class Gate : MonoBehaviour
     public void OpenTheGate()
     {
         spriteRenderer.sprite = openedGate;
-        if(GamePlayController.joinGate == 2)
-        {
-            PanelManager.Instance.OpenPanel(GameConfig.VICTORY_PANEL);
-        }
+        // if(GamePlayController.joinGate == 2)
+        // {
+        //     PanelManager.Instance.OpenPanel(GameConfig.VICTORY_PANEL);
+        // }
     }
 }
