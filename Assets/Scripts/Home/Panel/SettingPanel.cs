@@ -53,11 +53,13 @@ public class SettingPanel : Panel
         {
             stateMusic = 0;
             tickOfMusic.SetActive(false);
+            SoundManager.Instance.TurnOffMusic();
         }
         else
         {
             stateMusic = 1;
             tickOfMusic.SetActive(true);
+            SoundManager.Instance.TurnOnMusic();
         }
     }
 
@@ -67,11 +69,13 @@ public class SettingPanel : Panel
         {
             stateSound = 0;
             tickOfSound.SetActive(false);
+            SoundManager.Instance.TurnOnSFX();
         }
         else
         {
             stateSound = 1;
             tickOfSound.SetActive(true);
+            SoundManager.Instance.TurnOffSFX();
         }
     }
 

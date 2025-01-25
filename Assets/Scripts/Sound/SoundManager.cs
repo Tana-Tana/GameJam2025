@@ -57,12 +57,32 @@ public class SoundManager : Singleton<SoundManager>
     public void TurnOnSFX()
     {
         // SFXSource.mute = false;
+        walkingSound.mute = false;
+        dieSound.mute = false;
+        jumpSound.mute = false;
+
+        takeKeySound.mute = false;
+        clickSound.mute = false;
+        enemyFireSound.mute = false;
+
+        winSound.mute = false;
+        loseSound.mute = false;
         GamePrefs.SetSound(1);
     }
 
     public void TurnOffSFX()
     {
         // SFXSource.mute = true;
+        walkingSound.mute = true;
+        dieSound.mute = true;
+        jumpSound.mute = true;
+
+        takeKeySound.mute = true;
+        clickSound.mute = true;
+        enemyFireSound.mute = true;
+
+        winSound.mute = true;
+        loseSound.mute = true;
         GamePrefs.SetSound(0);
     }
 }
